@@ -22,6 +22,10 @@ Wanderlust is a full-stack web application where users can list, explore, and re
 - Session-based auth using **Passport.js**
 - Flash messages on success/failure
 - Secure password hashing with `passport-local-mongoose`
+- 🔄 Refactored project using MVC architecture (Models, Views, Controllers)
+- 🧭 Implemented `router.route()` chaining for cleaner route declarations
+- 📸 Image upload functionality using `Multer`
+- ☁️ Cloud storage integrated with `Cloudinary`
 
 ### 🏠 Listings
 - Create, view, edit, delete listings
