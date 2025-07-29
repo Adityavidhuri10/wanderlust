@@ -1,6 +1,6 @@
 # 🌍 Wanderlust
 
-Wanderlust is a full-stack web application where users can list, explore, and review places to stay. It features secure user authentication and authorization, making sure only the rightful owner can manage their listings or reviews.
+Wanderlust is a full-stack travel listing web app where users can **list, explore, filter, search, and review** places to stay. It features **secure user authentication**, **image uploads to the cloud**, **category-based filtering**, and a clean **MVC architecture** for maintainability.
 
 ---
 
@@ -10,6 +10,7 @@ Wanderlust is a full-stack web application where users can list, explore, and re
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB with Mongoose
 - **Authentication**: Passport.js (LocalStrategy)
+- **File Uploads**: Multer, Cloudinary
 - **Templating**: EJS with layouts and partials
 - **Utilities**: Express-session, Connect-flash, Method-override, dotenv
 
@@ -22,26 +23,51 @@ Wanderlust is a full-stack web application where users can list, explore, and re
 - Session-based auth using **Passport.js**
 - Flash messages on success/failure
 - Secure password hashing with `passport-local-mongoose`
-- 🔄 Refactored project using MVC architecture (Models, Views, Controllers)
-- 🧭 Implemented `router.route()` chaining for cleaner route declarations
-- 📸 Image upload functionality using `Multer`
-- ☁️ Cloud storage integrated with `Cloudinary`
 
 ### 🏠 Listings
-- Create, view, edit, delete listings
-- Only the **listing owner** can update or delete
+- Create, read, update, delete listings
+- **Only the listing owner** can update or delete
+- Listings support **categories** (e.g., trending, castles, rooms)
+- **Image upload** using Multer and storage on **Cloudinary**
 
 ### 📝 Reviews
-- Users can add and delete reviews
-- Only the **review author** can delete their review
+- Users can post and delete reviews
+- **Only the review author** can delete their review
+
+### 🔍 Search & Filters
+- Search listings by title or location
+- Filter by predefined categories using clickable icons
+
+### 🛠 Architecture & Routing
+- 💡 Refactored into **MVC pattern**: Models, Views, Controllers
+- 🧭 Used `router.route()` chaining for cleaner routing
+- 🌐 RESTful routing for listings and reviews
 
 ### 🛡 Middleware-based Protection
-- Protected routes with access control
-- Global error handling using `ExpressError`
+- Protected routes with ownership checks
+- Global error handling using custom `ExpressError`
 
 ### 🧩 UI & Views
-- EJS templating with partials and layouts
-- Dynamic navigation based on authentication state
-- Flash alerts for feedback
+- Clean and responsive layout using EJS
+- Flash messages and dynamic navbar based on auth status
+- Home page UI redesigned for better UX
 
 ---
+
+## 🚀 Setup Instructions
+
+1. Clone the repo:
+
+   ```bash
+   git clone https://github.com/Adityavidhuri10/wanderlust.git
+   cd wanderlust
+2. Install dependencies:
+    npm install
+3. Create a .env file and add your environment variables:
+    CLOUDINARY_CLOUD_NAME=your_cloud_name
+    CLOUDINARY_KEY=your_key
+    CLOUDINARY_SECRET=your_secret
+    DB_URL=your_mongodb_connection_string
+    SECRET=your_session_secret
+4. Run the development server:
+    npm start
