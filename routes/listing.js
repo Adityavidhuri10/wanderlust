@@ -34,8 +34,4 @@ router
 router.get('/:id/edit',isLoggedIn,isOwner,wrapAsync(listingController.renderEdit));
 
 
-router.get("/", (req, res) => {
-  res.redirect("/listings");
-});
-
 module.exports = router;
